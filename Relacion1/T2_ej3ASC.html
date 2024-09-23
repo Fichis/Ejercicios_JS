@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2 Ejer 3</title>
+</head>
+
+<body>
+    <h1>Ejercicio 3</h1>
+    <script>
+        /* Utilizo bucle infinito para hacer pruebas más rápidamente */
+        /* while (true) { */
+            let edad = parseInt(prompt("Introduce una edad"));
+            switch (true) {
+                case edad > 18:
+                    alert("absoluto");
+                    break;
+                case (edad > 15 && edad <= 18):
+                    alert("juvenil");
+                    break;
+                case (edad > 13 && edad < 16):
+                    alert("cadete");
+                    break;
+                case (edad > 11 && edad < 14):
+                    alert("infantil");
+                    break;
+                case (edad > 9 && edad < 12):
+                    alert("alevín");
+                    break;
+                case (edad > 7 && edad < 10):
+                    alert("benjamín");
+                    break;
+
+                default:
+                    alert("Eres demasiado pequeño");
+                    break;
+            }
+        /* } */
+    </script>
+</body>
+
+</html>
