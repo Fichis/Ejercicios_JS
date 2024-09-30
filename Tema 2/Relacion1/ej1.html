@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2 Relacion 1</title>
+</head>
+<body>
+    <h1>Relacion 1</h1>
+    <script>
+        let d = new Date();
+        let d1 = new Date("2024-12-19");
+        document.write(d.toDateString() + "<br>");
+        document.write(d.getTime() + "<br>");
+        document.write(d1.toDateString() + "<br>");
+        document.write(d1.getTime() + "<br>");
+        document.write("Faltan :" + (d1.getTime() - d.getTime())/1000/3600/24 + " dias para llegar al 19 de diciembre.");
+    </script>
+</body>
+</html>
