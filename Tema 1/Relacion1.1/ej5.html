@@ -1,68 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 5</title>
+    <title>T2 Ejer 5</title>
 </head>
-
 <body>
     <h1>Ejercicio 5</h1>
     <script>
-        // ? Introduzco esta función para no repetir el código comentado más abajo
-        /**
-         * Función que devuelve el número de fallos obtenidos al acertar un número
-         * 
-         * @num El número a adivinar
-         * @ans La respuesta del usuario (un prompt convertido a Int)
-         * @numFallos El número de fallos que ha hecho
-        */
-        function acierta(num, ans) {
-            let numFallos = 0;
-            for (let fallos = 1; num != ans; fallos++) {
-                if (num > ans) {
-                    alert("El número es más grande.");
-                } else {
-                    alert("El número es más pequeño.");
-                }
-                ans = parseInt(prompt("Inténtalo de nuevo:"));
-                numFallos = fallos;
-            }
-            return numFallos;
+        var countdown = prompt("Introduce un número para iniciar la cuenta atrás");
+        while(countdown > 0){
+            alert(countdown + ". . .");
+            countdown--;
+            /* countdown++; */
         }
     </script>
-    <script>
-        let numero = parseInt(prompt("Introduce un número a adivinar:"));
-        let numerosFallos = []; //Creo este array para introducir tantos numeros como fallos haga el jugador 2.
-        let respuesta = parseInt(prompt("Introduce el número que crees que pensó tu compañer@:"));
-        let fallos = acierta(numero, respuesta); //Aprovecho la función
-        /* for (let i = 1; numero != respuesta; i++) {
-            if(numero>respuesta){
-                alert("El número es más grande.");
-            }else {
-                alert("El número es más pequeño.");
-            }
-            respuesta = parseInt(prompt("Inténtalo de nuevo:"));
-            fallos=i;
-        } */
-
-        alert("Enhorabuena! Has acertado!!! El número era el " + numero + "\nHas fallado " + fallos + " veces. \nEl jugador 1 debe introducir " + fallos + " números más.");
-
-        for (let j = 0; j < fallos; j++) { //Creo tantos números como fallos haya hecho en el array creado anteriormente
-            numerosFallos[j] = parseInt(prompt("Introduce el número " + (j + 1) + ":"));
-            /* console.log(numerosFallos); */
-        }
-        /* console.log(fallos); */
-        for (let i = 0; i < numerosFallos.length; i++) { //Bucle que usa la función para que acierte cada uno de los números que haya en el array
-            numero = numerosFallos[i];
-            respuesta = parseInt(prompt("Introduce el número número " + (i+1) + " que crees que pensó tu compañer@:"));
-            fallos += acierta(numero, respuesta);
-            alert("Enhorabuena! Has acertado!!! \nLlevas un total de: " + fallos + " fallos.");
-        }
-        alert("FIN DEL JUEGO.\nTUVISTE UN TOTAL DE: " + fallos + " FALLOS.");
-
-    </script>
+    <p>Lo que ocurre es que al cambiar la línea "countdown--" por "countdown++", el bucle while se hace infinito; ya que la condición de salida es "while countdown > 0"; entonces al incrementar el número de la cuenta, nunca llega a 0 y nunca sale del bucle while.</p>
 </body>
-
 </html>

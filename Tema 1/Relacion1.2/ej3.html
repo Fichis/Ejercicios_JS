@@ -4,16 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
-    <script src="./relacion1-3.js"></script>
+    <title>Ejercicio 2</title>
 </head>
 
 <body>
-    <h1>Ejercicio 3</h1>
+    <h1>Ejercicio 2</h1>
     <script>
-        let radio = 8;
-        document.write("The circumference is " + circumference(radio) + "<br>");
-        document.write("The area is " + area(radio));
+        let numColum = parseInt(prompt("Introduce el numero de columnas:"));
+        let altura = parseInt(prompt("Introduce la altura en píxeles:"));
+        let anchura = parseInt(prompt("Introduce el ancho en píxeles:"));
+
+        document.write("<table border = '1' style='background-color: black;'>");
+        document.write("<tr style = 'background-color: white; height: " + altura + "px; '");
+        for (let i = 0; i <= numColum; i++) {
+            if (i % 2 != 0) {
+                document.write("<td style=' width: " + anchura + "px;' bgcolor='black'>");
+            } else {
+                document.write("<td style=' width: " + anchura + "px;'>");
+            }
+        }
+        document.write("</tr>");
+        document.write("</table>");
     </script>
 </body>
 

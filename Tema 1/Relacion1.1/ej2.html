@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <title>T2 Ejer 2</title>
 </head>
-
 <body>
     <h1>Ejercicio 2</h1>
     <script>
-        let numColum = parseInt(prompt("Introduce el numero de columnas:"));
-        let altura = parseInt(prompt("Introduce la altura en píxeles:"));
-        let anchura = parseInt(prompt("Introduce el ancho en píxeles:"));
-
-        document.write("<table border = '1' style='background-color: black;'>");
-        document.write("<tr style = 'background-color: white; height: " + altura + "px; '");
-
-        for (let i = 0; i <= numColum; i++) {
-            document.write("<td style=' width: " + anchura + "px;'></td>");
-        }
-        
-        document.write("</tr>");
-        document.write("</table>");
+        let edad = parseInt(prompt("Introduce una edad")) >= 18 ? alert("Eres mayor de edad") : alert("Eres menor de edad");
+        console.log(edad); //Muestra undefined, preguntar.
     </script>
 </body>
-
 </html>

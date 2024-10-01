@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
-    <script src="./relacion1-3.js"></script>
+    <title>Ejercicio 4</title>
 </head>
-
 <body>
     <h1>Ejercicio 4</h1>
     <script>
-        let temperatura = 32;
-        document.write(convertTemperature(temperatura));
+        let numColum = parseInt(prompt("Introduce el numero de columnas:"));
+        let altura = parseInt(prompt("Introduce la altura en píxeles:"));
+        let anchura = parseInt(prompt("Introduce el ancho en píxeles:"));
+
+        document.write("<table border = '1' style='background-color: black;'>");
+        document.write("<tr style = 'background-color: white; height: " + altura + "px; '");
+
+        while(numColum >= 0) {
+            document.write("<td style=' width: " + anchura + "px;'>");
+            numColum--;
+        }
+
+        document.write("</tr>");
+        document.write("</table>");
     </script>
 </body>
-
 </html>

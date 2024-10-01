@@ -9,7 +9,7 @@
     <h1>Ejercicio 2</h1>
     <script>
         let fcumple = new Date(prompt("Introduzca su fecha de nacimiento en este formato: YYYY-MM-DD"));
-        for(let i = fcumple.getFullYear(); i <= new Date().getFullYear(); i++){
+        for(let i = fcumple.getFullYear(); i <= 2100; i++){
             fcumple.setFullYear(i);
             if(fcumple.getDay() == 0){
                 console.log(fcumple.getFullYear());

@@ -4,27 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <title>T2 Ejer 3</title>
 </head>
 
 <body>
-    <h1>Ejercicio 2</h1>
+    <h1>Ejercicio 3</h1>
     <script>
-        let numColum = parseInt(prompt("Introduce el numero de columnas:"));
-        let altura = parseInt(prompt("Introduce la altura en píxeles:"));
-        let anchura = parseInt(prompt("Introduce el ancho en píxeles:"));
+        /* Utilizo bucle infinito para hacer pruebas más rápidamente */
+        /* while (true) { */
+            let edad = parseInt(prompt("Introduce una edad"));
+            switch (true) {
+                case edad > 18:
+                    alert("absoluto");
+                    break;
+                case (edad > 15 && edad <= 18):
+                    alert("juvenil");
+                    break;
+                case (edad > 13 && edad < 16):
+                    alert("cadete");
+                    break;
+                case (edad > 11 && edad < 14):
+                    alert("infantil");
+                    break;
+                case (edad > 9 && edad < 12):
+                    alert("alevín");
+                    break;
+                case (edad > 7 && edad < 10):
+                    alert("benjamín");
+                    break;
 
-        document.write("<table border = '1' style='background-color: black;'>");
-        document.write("<tr style = 'background-color: white; height: " + altura + "px; '");
-        for (let i = 0; i <= numColum; i++) {
-            if (i % 2 != 0) {
-                document.write("<td style=' width: " + anchura + "px;' bgcolor='black'>");
-            } else {
-                document.write("<td style=' width: " + anchura + "px;'>");
+                default:
+                    alert("Eres demasiado pequeño");
+                    break;
             }
-        }
-        document.write("</tr>");
-        document.write("</table>");
+        /* } */
     </script>
 </body>
 

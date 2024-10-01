@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4</title>
+    <title>T2 Ejer 4</title>
 </head>
+
 <body>
     <h1>Ejercicio 4</h1>
     <script>
-        let numColum = parseInt(prompt("Introduce el numero de columnas:"));
-        let altura = parseInt(prompt("Introduce la altura en píxeles:"));
-        let anchura = parseInt(prompt("Introduce el ancho en píxeles:"));
+        const hinicio = 9;
+        const hfin = 21;
 
-        document.write("<table border = '1' style='background-color: black;'>");
-        document.write("<tr style = 'background-color: white; height: " + altura + "px; '");
-
-        while(numColum >= 0) {
-            document.write("<td style=' width: " + anchura + "px;'>");
-            numColum--;
+        for(let i = hinicio; i < hfin; i++){
+            document.write(i + ":00 <br>");
+            document.write(i + ":30 <br>");
         }
-
-        document.write("</tr>");
-        document.write("</table>");
     </script>
 </body>
+
 </html>
+

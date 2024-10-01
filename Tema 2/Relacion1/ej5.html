@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <script>
+        let opcion = parseInt(prompt("Introduce una opción\n1. Potencia\n2. Raíz\n3. Redondeo\n4. Trigonometría"))
+        switch(opcion){
+            case 1: 
+                let base = parseInt(prompt("Introduce el número base:"))
+                let exponente = parseInt(prompt("Introduce el número exponencial:"))
+                document.write("La potencia de " + base + " elevado a " + exponente + " es: " + Math.pow(base,exponente))
+                break;
+            
+            case 2: 
+                let num = parseInt(prompt("Introduce un número no negativo:"))
+                while(num < 0){
+                    num = parseInt(prompt("El número es negativo. Introduce un numero superior a 0"))
+                }
+                document.write("La raíz de " + num + " es: " + Math.sqrt(num));
+                break;
+            case 3: 
+                let decimal = parseFloat(prompt("Introduce un número decimal para redondear:"))
+                document.write("El número entero más próximo a la baja es: " + Math.floor(decimal) + "<br>")
+                document.write("El número entero más próximo a la alta es: "+ Math.ceil(decimal))
+                break;
+            case 4: 
+                let angulo = parseInt(prompt("Introduce un ángulo (0 - 360)"))
+                while(angulo < 0 || angulo > 360){
+                    angulo = parseInt(prompt("No está entre el rango de valores. Introduce un ángulo entre 0 y 360"))
+                }
+                document.write("El seno es: " + Math.sin(angulo) + "<br>");
+                document.write("El coseno es: " + Math.cos(angulo) + "<br>");
+                document.write("La tangente es: " + Math.tan(angulo))
+                break;
+            default: 
+                document.write("Reinicia la página. No elegiste una opción.")
+        }
+    </script>
+</body>
+</html>
