@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <p id="contador"></p>
+    <script>
+        let contador = 60;
+        let parrafo = document.getElementById("contador");
+        setInterval(function() {if(contador>=0){parrafo.innerHTML = "Contador: " + contador; contador--;}}, 1000);
+    </script>
+</body>
+</html>
