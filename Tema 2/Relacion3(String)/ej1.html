@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="./funciones.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 1.1</h1>
+    <script>
+        let cadena = "Hola, esto es una cadena.";
+        document.write("La cadena '" + cadena + "' invertida es: '" + invierteCadena(cadena) + "'.");
+    </script>
+    <h1>Ejercicio 1.2</h1>
+    <script>
+        cadena = "Soy una cadena";
+        document.write("La cadena invertida palabra a palabra es: " + inviertePalabras(cadena));
+    </script>
+    <h1>Ejercicio 1.3</h1>
+    <script>
+        cadena = "La megacadenaca chachiguay chulona";
+        document.write("La palabra más larga es: " + encuentraPalabraMasLarga(cadena));
+    </script>
+    <h1>Ejercicio 1.4</h1>
+    <script>
+        cadena = "Una buena frase para contar";
+        let contador = 5;
+        document.write("Hay " + filtraPalabrasMasLargas(cadena, contador) + " palabras que superan " + contador + " caracteres.");
+    </script>
+</body>
+</html>
