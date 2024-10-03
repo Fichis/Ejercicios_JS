@@ -62,3 +62,45 @@ function filtraPalabrasMasLargas(cad_arg, i){
     }
     return contadorResultado;
 }
+
+//! Ejercicio 1.5
+function cadenaBienFormada(cad_arg){
+    let resultado = "";
+    for(let i = 0; i < cad_arg.length; i++){
+        if(i == 0){
+            resultado +=cad_arg[i].toUpperCase();
+            i++;
+        }
+        resultado += cad_arg[i].toLowerCase();
+    }
+    return resultado;   
+}
+
+//! Ejercicio 2
+function mayusOMinus(cad_arg){
+    let resultado = "";
+    if(cad_arg == cad_arg.toUpperCase()){
+        resultado = "La cadena está formada sólo por mayúsculas.";
+    }else if (cad_arg == cad_arg.toLowerCase()){
+        resultado = "La cadena está formada sólo por minúsculas.";
+    }else {
+        resultado = "La cadena está formada por una mezcla de mayúsculas y minúsculas"
+    }
+    return resultado;
+}
+
+//! Ejercicio 3
+function apariciones(cad_arg, subcad_arg){
+    let contador = 0;
+    let visor = "";
+    for(let i = 0; i <= (cad_arg.length - subcad_arg.length); i++){
+        for(let j = i; j < (i+subcad_arg.length); j++){
+            visor += cadena.charAt(j);
+        }
+        if(subcad_arg == visor){
+            contador++;
+        }
+        visor = "";
+    }
+    return contador;
+}
