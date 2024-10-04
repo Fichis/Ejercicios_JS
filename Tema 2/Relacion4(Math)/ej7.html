@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <style>
+        table {
+            width: 30%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Ejercicio 7</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Seno</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-seno">
+            
+        </tbody>
+    </table>
+
+    <script>
+        const tablaSeno = document.getElementById('tabla-seno');
+
+        for (let i = 1; i <= 10; i++) { 
+            const seno = Math.sin(i);
+            const fila = document.createElement('tr');
+            const celdaNumero = document.createElement('td');
+            const celdaSeno = document.createElement('td');
+
+            celdaNumero.textContent = i;
+            celdaSeno.textContent = seno.toFixed(2);
+
+            fila.appendChild(celdaNumero);
+            fila.appendChild(celdaSeno);
+            tablaSeno.appendChild(fila);
+        }
+    </script>
+
+</body>
+
+</html>

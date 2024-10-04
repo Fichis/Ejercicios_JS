@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="./funciones.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <script>
+        let a =  parseInt(prompt("Introduce el valor numerico del coeficiente de x2")); 
+        let b =  parseInt(prompt("Introduce el valor numérico del coeficiente de x")); 
+        let c = parseInt(prompt("Introduce el coeficiente del valor numérico"));
+        let resultados = ec2Grado(a,b,c);
+
+        for(let i = 0; i < resultados.length; i++) {
+            document.write("El resultado " + (i+1) + " es: " + resultados[i] + "<br>");
+        }
+    </script>
+</body>
+</html>

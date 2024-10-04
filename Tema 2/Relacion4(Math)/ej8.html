@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h1>Ejercicio 8</h1>
+    <img id="imgRandom" width="30%" src="" alt="Imagen">
+    <script>
+        let random = Math.floor(randomNum(1,4));
+        switch (random) {
+            case 1:
+                document.getElementById("imgRandom").src = './img/img1.jpg';
+                break;
+            case 2:
+                document.getElementById("imgRandom").src = './img/img2.jpg';
+                break;
+            case 3:
+                document.getElementById("imgRandom").src = './img/img3.jpg';
+                break;
+        }
+    </script>
+</body>
+
+</html>

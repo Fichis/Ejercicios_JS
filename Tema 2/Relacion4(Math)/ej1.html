@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="./funciones.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <script>
+        document.write("El número aleatorio entre 0 y 1 es: " + Math.random().toFixed(2) + "<br>");
+        document.write("El número aleatorio entre 100 y 200 es: " + randomNum(100,200).toFixed(0) + "<br>")
+        let min = parseInt(prompt("Introduce num1"));
+        let max = parseInt(prompt("Introduce num2 (debe ser mayor que el número anterior)"));
+        document.write("El número aleatorio entre " + min + " y " + max + " es: " + randomNum(min,max).toFixed(0) + "<br>");
+    </script>
+</body>
+</html>

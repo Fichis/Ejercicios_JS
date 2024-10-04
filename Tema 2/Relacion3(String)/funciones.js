@@ -104,3 +104,8 @@ function apariciones(cad_arg, subcad_arg){
     }
     return contador;
 }
+
+//! Ejercicio 4
+function ordenaCadena(cad_arg){
+    
+}
