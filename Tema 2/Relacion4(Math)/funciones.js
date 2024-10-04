@@ -27,12 +27,15 @@ function pitagoras(cateto1, cateto2) {
  * @returns Array de las 2 posibles soluciones
  */
 function ec2Grado(a, b, c){
-    const NUM = -4;
-    const MENOS = -1;
-    let raiz = Math.sqrt((NUM * a * c));
-    let res1 = (MENOS * b + raiz) / (2 * a);
-    let res2 = (MENOS * b - raiz) / (2 * a);
-    let resultados = [];
-    resultados.push(res1, res2);
-    return resultados;
+    const discriminante = b * b - 4 * a * c;
+    let res = [];
+    if (discriminante < 0) {
+      res[0] = "No hay soluciones reales";
+    }
+
+    const raiz = Math.sqrt(discriminante);
+    const res1 = (-b + raiz) / (2 * a);
+    const res2 = (-b - raiz) / (2 * a);
+    res.push(res1, res2);
+    return res;
 }
