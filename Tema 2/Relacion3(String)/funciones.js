@@ -107,5 +107,19 @@ function apariciones(cad_arg, subcad_arg){
 
 //! Ejercicio 4
 function ordenaCadena(cad_arg){
-    
+    const vocales = "aeiouAEIOU";
+    let consonantes = "";
+    let vocalesResult = "";
+
+    for (let i = 0; i < texto.length; i++) {
+      let char = texto[i];
+      if (char != " ") {
+        if (vocales.includes(char)) {
+          vocalesResult += char;
+        } else {
+          consonantes += char;
+        }
+      }
+    }
+    return consonantes + vocalesResult;
 }
