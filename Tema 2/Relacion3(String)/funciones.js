@@ -111,8 +111,8 @@ function ordenaCadena(cad_arg){
     let consonantes = "";
     let vocalesResult = "";
 
-    for (let i = 0; i < texto.length; i++) {
-      let char = texto[i];
+    for (let i = 0; i < cad_arg.length; i++) {
+      let char = cad_arg[i];
       if (char != " ") {
         if (vocales.includes(char)) {
           vocalesResult += char;
@@ -122,4 +122,16 @@ function ordenaCadena(cad_arg){
       }
     }
     return consonantes + vocalesResult;
+}
+
+//! Ejercicio 5
+function eliminarRepetidos(cadena) {
+  let resultado = "";
+  for (let i = 0; i < cadena.length; i++) {
+    let char = cadena[i];
+    if (char != " " && resultado.indexOf(char) == -1) {
+      resultado += char;
+    }
+  }
+  return resultado;
 }
