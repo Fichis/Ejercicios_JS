@@ -174,3 +174,29 @@ function cuentaPalabras(cad_arg) {
   }
   return contador;
 }
+
+//! Ejercico 9
+function validateCreditCard(card_number){
+  let res = false;
+  let caracteres = card_number.length;
+  let caractNoRepetidos = eliminarRepetidos(card_number);
+  let sumaCaracteres = 0;
+  for(let i = 0; i < card_number.length; i++){
+    sumaCaracteres += parseInt(card_number[i]);
+  }
+  if((parseInt(caracteres)) && (caractNoRepetidos.length > 1)
+    && (card_number[card_number.length-1] % 2 == 0) && (sumaCaracteres > 16)){
+    res = true;
+  }
+  return res;
+}
+
+//! Ejercicio 10
+function validateCreditCard2(card_number){
+  let res = false;
+  let card = card_number.replace(/-/g, "");
+  if(validateCreditCard(card)){
+    res = true;
+  }
+  return res;
+}
