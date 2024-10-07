@@ -7,10 +7,11 @@ function abreVentana(numVentanas, wid, hgh, url) {
       "width = " + wid + ", height = " + hgh + ", top = 0, left = " + ancho
     );
     ventana.document.write(
-      "<button onclick = 'window.close()'>Cerrar Ventana</button>"
+      "<p>Ventana" + (i+1) + "</p><br><button onclick = 'window.close()'>Cerrar Ventana</button>"
     );
   }
 }
+
 
 function abreVentana2(numVentanas, wid, hgh, url){
   let ancho = window.innerWidth;
