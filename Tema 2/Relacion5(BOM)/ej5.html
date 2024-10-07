@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h1>Ejercicio 5</h1>
+    <p id="parrafo"></p>
+    <script>
+        let ancho = window.innerWidth;
+        let ventana;
+    </script>
+    <button onclick="abreVentana2(1, 500, 400, '')">Abrir ventana</button>
+    <button onclick="ventana.window.close()">Cerrar Ventana Secundaria</button>
+    <button onclick="ventana.document.write(prompt('Introduce un mensaje.'));">Envía un mensaje a la ventana secundaria</button>
+    <script>
+        function recibeMensaje(texto){
+            var objeto = document.getElementById("parrafo");
+            objeto.innerHTML = texto;
+        }
+
+        function cerrarse() {
+            window.close();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h1>Ejercicio 4</h1>
+    <p>Hemos cambiado de ubicación esta página. En breves momentos srá redireccionado...</p>
+    <p id="contador"></p>
+    <script>
+        let contador = 5;
+        let parrafo = document.getElementById("contador");
+        setInterval(function () { if (contador > 0) { parrafo.innerHTML = contador; contador--; if (contador == 0) { window.location.href = "https://www.pccomponentes.com"; } } }, 1000);
+    </script>
+</body>
+
+</html>
