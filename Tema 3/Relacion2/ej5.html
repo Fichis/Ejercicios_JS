@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h2>Ejercicio 5</h2>
+    <p>
+        Utilizando el método random del objeto Math carga con valores aleatorios un array de 20
+        elementos con valores enteros entre el 0 y el 100. Ten en cuenta que random devuelve un
+        número flotante entre 0 y 1. Una vez cargado muestra los datos del array por pantalla.
+
+        Tras ello muestra la información del ejercicio anterior sobre los valores de dicho array, es decir:
+        Valor mínimo
+        Valor máximo
+        Valor medio.
+    </p>
+    <script>
+        let array = randomArray(20);
+        document.write(array + "<br>");
+        let max = Math.max(...array);
+        let min = Math.min(...array);
+        let med = encontrarMedio(array);
+        document.write(`
+            Valor minimo: ${min} <br>
+            Valor máximo: ${max} <br>
+            Valor medio: ${med}
+        `)
+    </script>
+</body>
+
+</html>

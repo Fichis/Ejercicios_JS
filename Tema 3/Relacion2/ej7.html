@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h2>Ejercicio 7</h2>
+    <p>
+        Utilizando el método random del objeto Math carga con valores aleatorios un array de 20
+        elementos con valores enteros entre el 0 y el 100. Muestra los valores sin ordenar y ordenados
+        (eliminando duplicados), para ello deberás implementar alguno de los algoritmos de ordenación,
+        se recomienda el burbuja por su fácil implementación
+    </p>
+    <script>
+        let array = randomArray(20);
+        document.write(array.join(", ") + "<br>");
+        let ordenado = ordenarBurbuja(array);
+        let sinDuplicados = eliminarDuplicados(ordenado);
+        document.write(sinDuplicados.join(", "));
+    </script>
+</body>
+
+</html>

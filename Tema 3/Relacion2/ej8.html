@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h2>Ejercicio 8</h2>
+    <p>
+        Solicita al usuario el nombre de varias personas y luego muestra los nombres ordenados. Los
+        nombres serán introducidos en una sola cadena separado cada nombre por coma. Utiliza el
+        método split.
+    </p>
+    <script>
+        // Solicitar al usuario que ingrese los nombres
+            let nombresInput = prompt("Introduce los nombres separados por coma:");
+
+            // Separar los nombres utilizando el método split
+            let nombres = nombresInput.split(',').map(nombre => nombre.trim());
+
+            nombres.sort();
+
+            document.write("Nombres ordenados: <br>");
+            nombres.forEach(nombre => document.write(nombre+"<br>"));
+
+    </script>
+</body>
+
+</html>

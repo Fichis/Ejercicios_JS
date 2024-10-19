@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
+    <script src="./funciones.js"></script>
 </head>
 <body>
     <h2>Ejercicio 1</h2>
+    <p>Realiza un script que solicite 5 números al usuario, almacenaremos estos números en un array y
+    posteriormente ofreceremos la siguiente información</p>
     <script>
-        
+        let numeros = [];
+        let valorMin, valorMed, valorMax;
+        for(let i = 1; i <= 5; i++) {
+            let numero = parseInt(prompt(`Introduce el numero ${i}`));
+            while(isNaN(numero)){
+                numero = parseInt(prompt(`Introduce el numero ${i} de nuevo.`));
+            }
+            numeros.push(numero);
+        }
+
+        valorMin = Math.min(...numeros);
+        valorMax = Math.max(...numeros);
+        valorMed = encontrarMedio(numeros);
+
+        document.write(
+            `<p>El valor mínimo es: ${valorMin}</p>
+            <p>El valor medio es: ${valorMed}</p>
+            <p>El valor máximo es: ${valorMax}</p>
+        `);
     </script>
 </body>
 </html>

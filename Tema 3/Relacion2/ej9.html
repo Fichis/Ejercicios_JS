@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <h2>Ejercicio 9</h2>
+    <p>
+        Leer una cadena de texto introducida por el usuario y posteriormente, mostrar la siguiente
+        información en una nueva ventana:
+    </p>
+    <ul>
+        <li>Número de palabras.</li>
+        <li>Primera palabra</li>
+        <li>Última palabra.</li>
+        <li>Las palabras colocadas en orden inverso.</li>
+        <li>Las palabras ordenadas de la a a la z y las palabras ordenadas de la z a la a.</li>
+    </ul>
+    <p>Nota: Se regenerar un array con la función split().</p>
+
+    <script>
+        let texto = prompt("Introduce un texto");
+        let palabras = texto.split(" ");
+        let numPalabras = palabras.length;
+        let primeraPalabra = palabras[0];
+        let ultimaPalabra = palabras[palabras.length-1];
+        let inverso = palabras.slice().reverse().join(", ");
+        let palabrasAZ = palabras.slice().sort().join(", ");
+        let palabrasZA = palabras.slice().sort().reverse().join(", ");
+
+        document.write("<h2>Información de la cadena de texto:</h2>");
+            document.write("<p>Número de palabras: " + numPalabras + "</p>");
+            document.write("<p>Primera palabra: " + primeraPalabra + "</p>");
+            document.write("<p>Última palabra: " + ultimaPalabra + "</p>");
+            document.write("<p>Palabras en orden inverso: " + inverso + "</p>");
+            document.write("<p>Palabras ordenadas de la A a la Z: " + palabrasAZ + "</p>");
+            document.write("<p>Palabras ordenadas de la Z a la A: " + palabrasZA + "</p>");
+    </script>
+</body>
+</html>
