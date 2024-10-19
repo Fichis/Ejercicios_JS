@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="./funciones.js"></script>
+</head>
+<body>
+    <h2>Ejercicio 7</h2>
+    <p>Crea una función que calcule el factorial de un número dado. Para comprobarlo,
+    diseña una web que muestre en forma de tabla el factorial para los valores de 1 a 10.</p>
+    <table border="1" cellspacing="0">
+        <caption>Factorial de los numeros del 1 al 10</caption>
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Factorial</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                for(let i = 0; i <= 10; i++){
+                    document.write(`<tr>`);
+                    document.write(`<td>${i}</td>`);
+                    document.write(`<td>${factorialRecursivo(i)}`);
+                    document.write(`</tr>`);
+                }
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>

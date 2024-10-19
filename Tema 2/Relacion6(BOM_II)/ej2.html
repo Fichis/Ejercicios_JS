@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <h1>Ejercicio 2</h1>
+    <script>
+        let table = `<table border="1">
+    <tr>
+        <td>Ancho de Pantalla</td>
+        <td>${screen.width}</td>
+    </tr>
+    <tr>
+        <td>Alto de Pantalla</td>
+        <td>${screen.height}</td>
+    </tr>
+    <tr>
+        <td>Ancho de la Ventana</td>
+        <td>${window.innerWidth}</td>
+    </tr>
+    <tr>
+        <td>Alto de la Ventana</td>
+        <td>${window.innerHeight}</td>
+    </tr>
+    <tr>
+        <td>Color de Profundidad</td>
+        <td>${screen.colorDepth}</td>
+    </tr>
+    <tr>
+        <td>Resolución de Pantalla</td>
+        <td>${screen.availWidth} x ${screen.availHeight}</td>
+    </tr>
+    <tr>
+        <td>Orientación</td>
+        <td>${screen.orientation ? screen.orientation.type : "No soportada"}</td>
+    </tr>
+</table>`;
+
+        document.body.innerHTML += table;
+    </script>
+</body>
+
+</html>

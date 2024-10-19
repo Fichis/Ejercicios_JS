@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="./funciones.js"></script>
+</head>
+
+<body>
+    <h2>Ejercicio 5</h2>
+    <p>Mejora el ejercicio anterior permitiendo calcular también el área de un circulo</p>
+    <script>
+        let radio = parseFloat(prompt("Introduce el radio del circulo."));
+        let opcion = parseInt(prompt("Elige una opcion:\n1. Área\n2. Volumen\n3. Salir"));
+        while (opcion != 3){
+            switch (opcion) {
+                case 1: 
+                    alert("El área es: " + areaEsfera(radio));
+                break;
+                case 2:
+                    alert("El volumen es: " + volumenEsfera(radio));
+                break;
+                default:
+                    alert("Elige una opción entre 1 y 3.");
+                break;
+            }
+            opcion = parseInt(prompt("Elige una opcion:\n1. Área\n2. Volumen\n3. Salir"));
+        }
+    </script>
+</body>
+
+</html>

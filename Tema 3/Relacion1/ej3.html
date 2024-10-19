@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="./funciones.js"></script>
+</head>
+<body>
+    <script>
+        let cont1 = 0;
+        let cont2 = 0;
+        let cont3 = 0;
+        let cont4 = 0;
+        let cont5 = 0;
+        let cont6 = 0;
+        for(let i = 0; i < 6000; i++){
+            let dado = lanzamiento();
+            switch(dado){
+                case 1:
+                    cont1++;
+                    break;
+                case 2:
+                    cont2++;
+                    break;
+                case 3:
+                    cont3++;
+                    break;
+                case 4:
+                    cont4++;
+                    break;
+                case 5:
+                    cont5++;
+                    break;
+                case 6: 
+                    cont6++;
+                    break;
+            }
+        }
+        document.write(
+        `El número 1 ha salido: ${cont1} veces. <br>
+        El número 2 ha salido: ${cont2} veces. <br>
+        El número 3 ha salido: ${cont3} veces. <br>
+        El número 4 ha salido: ${cont4} veces. <br>
+        El número 5 ha salido: ${cont5} veces. <br>
+        El número 6 ha salido: ${cont6} veces. <br>
+        `);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+    <script>
+        let table = `<table border="1">
+    <tr>
+        <td>Navegador</td>
+        <td>${navigator.appName}</td>
+    </tr>
+    <tr>
+        <td>Versión</td>
+        <td>${navigator.appVersion}</td>
+    </tr>
+    <tr>
+        <td>User Agent</td>
+        <td>${navigator.userAgent}</td>
+    </tr>
+    <tr>
+        <td>Plataforma</td>
+        <td>${navigator.platform}</td>
+    </tr>
+    <tr>
+        <td>Lenguaje</td>
+        <td>${navigator.language}</td>
+    </tr>
+    <tr>
+        <td>Cookies habilitadas</td>
+        <td>${navigator.cookieEnabled}</td>
+    </tr>
+    <tr>
+        <td>Tamaño de la ventana</td>
+        <td>${window.innerWidth} x ${window.innerHeight}</td>
+    </tr>
+    <tr>
+        <td>Tamaño total de la ventana</td>
+        <td>${window.outerWidth} x ${window.outerHeight}</td>
+    </tr>
+    <tr>
+        <td>Fecha</td>
+        <td>${new Date().toLocaleString()}</td>
+    </tr>
+</table>`;
+
+        document.body.innerHTML += table;
+    </script>
+</body>
+
+</html>
