@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <h2>Ejercicio 5</h2>
+    <p>
+        Crear una función llamado paresImpares que cree un array de 100 números aleatorios del 1
+        al 1000. Una vez creado, mostrar el contenido y después organizarlo de forma que estén
+        juntos los elementos pares y los impares. Después, volver a mostrar el array
+    </p>
+    <script>
+        function randomArray(n) {
+            let array = [];
+            for (let i = 0; i < n; i++) {
+                array.push(Math.floor(Math.random() * 1000) + 1);
+            }
+            return array;
+        }
+        function paresImpares() {
+            const numeros = randomArray(100);
+            numeros.sort();
+            document.write(`<p>${numeros}</p>`);
+            const numPar = [];
+            const numImpar = [];
+            for(let i = 0; i < numeros.length; i++){
+                if(numeros[i] % 2 == 0){
+                    numPar.push(numeros[i]);
+                }else {
+                    numImpar.push(numeros[i]);
+                }
+            }
+            console.log(numPar);
+            console.log(numImpar);
+            for(let j = 0; j < numImpar.length; j++){
+                numPar.push(numImpar[j]);
+            }
+
+
+
+            document.write(`<p>${numPar}</p>`);
+        }
+        paresImpares();
+    </script>
+</body>
+
+</html>

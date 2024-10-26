@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <h2>Ejercicio 4</h2>
+    <p>
+        A veces para elegir un estudiante al que preguntar en clase necesitamos hacerlo al azar.
+        Escribe una función que aleatoriamente vaya devolviendo el nombre de un estudiante cada
+        vez.
+    </p>
+    <script>
+        const clase = [
+            {
+                nombre: "Ángel García",
+                edad: 20
+            },
+            {
+                nombre: "Laura Casal",
+                edad: 23
+            },
+            {
+                nombre: "Alan Escribano",
+                edad: 19
+            },
+            {
+                nombre: "Sofía Martínez",
+                edad: 22
+            },
+            {
+                nombre: "Luis Pérez",
+                edad: 20
+            },
+            {
+                nombre: "María Gómez",
+                edad: 21
+            }
+        ]
+
+        const nameRandom = (arr) => {
+            const random = Math.floor(Math.random()*arr.length);
+            console.log(random);
+            return arr[random].nombre;
+        }
+
+        document.write(`<p>${nameRandom(clase)}</p>`);
+    </script>
+</body>
+
+</html>

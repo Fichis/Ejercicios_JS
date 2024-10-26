@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <style>
+        td, th {
+            padding: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ejercicio 9</h2>
+    <p>
+        Mejora el ejercicio anterior para además mostrar una tabla bidimensional que muestre las
+        combinaciones (no sólo la suma) que se han ido dando (ahora sí podemos usar arrays
+        bidimensionales).
+    </p>
+    <script>
+        const dados =[
+            [1,2,3,4,5,6],
+            [1,2,3,4,5,6]
+        ]
+        document.write(`
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Dado 1</th>
+                    <th>Dado 2</th>
+                    <th>Combinación</th>
+                </tr>
+            </thead>
+            <tbody>
+        `)
+        for(let i = 0; i < 100; i++){
+            let n1 = dados[Math.floor(Math.random() * 1)][Math.floor(Math.random() * 6)];
+            let n2 = dados[Math.floor(Math.random() * 1)][Math.floor(Math.random() * 6)]
+            document.write(`
+                <tr>
+                    <td>${n1}</td>
+                    <td>${n2}</td>
+                    <td>${n1 + n2}</td>
+
+            `)
+        }
+        document.write(`
+        </tbody>
+        </table>
+        `)
+    </script>
+</body>
+
+</html>

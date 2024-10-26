@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo arrays destructuring</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4,5];
+        let [primero,, tercero, ...resto] = arr;
+
+        console.log(arr);
+        console.log(primero, tercero);
+        console.log(resto);
+
+        const articulos = {
+            codigo: 5,
+            nombre: "Teclado",
+            precio: 9.14
+        }
+
+        let {codigo, precio} = articulos;
+
+        const totalImporte = ({precio}) => precio * 1.21;
+
+        console.log(totalImporte(articulos));
+    </script>
+</body>
+</html>

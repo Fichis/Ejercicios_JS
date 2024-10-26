@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h2>Ejercicio 2</h2>
+    <p>
+        Escribe una función que dado un número de estudiante y un trimestre, devuelva su nota.
+        Sobreescribe esa función de tal modo que si no se indica el trimestre se devuelva la nota
+        media de los exámenes.
+    </p>
+    <script>
+        const buscaNota = (numEstudiante, trimestre) => {
+            const estudiantes = [
+                {
+                    numAlumno: 1,
+                    nombre: "Ángel García",
+                    1: 6,
+                    2: 7,
+                    3: 10,
+                    media: Math.round((6+7+10)/3)
+                },
+                {
+                    numAlumno: 2,
+                    nombre: "Laura Casal",
+                    1: 7,
+                    2: 4,
+                    3: 8,
+                    media: Math.round((7+4+8)/3)
+                },
+                {
+                    numAlumno: 3,
+                    nombre: "Alan Escribano",
+                    1: 3,
+                    2: 5,
+                    3: 6,
+                    media: Math.round((3+5+6)/3)
+                }
+            ]
+            for (let i = 0; i < estudiantes.length; i++) {
+                if (estudiantes[i].numAlumno === numEstudiante) {
+                    if (trimestre === undefined) {
+                        return estudiantes[i].media;
+                    } else if (estudiantes[i][trimestre] !== undefined) {
+                        return estudiantes[i][trimestre];
+                    } else {
+                        return 'Trimestre no válido';
+                    }
+                }
+            }
+            return 'Estudiante no encontrado';
+        }
+
+        document.write(`<p>La nota es: ${buscaNota(1)}</p>`);
+        document.write(`<p>La nota es: ${buscaNota(3,1)}</p>`);
+    </script>
+</body>
+</html>
