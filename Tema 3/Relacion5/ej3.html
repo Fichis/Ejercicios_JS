@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <h2>Ejercicio 3</h2>
+        <script>
+            const numbers = [2,8,5,45,5,5,4];
+            const initialValue = 0;
+            const sumWithInitial = numbers.reduce(
+                (accumulator, currentValue) => accumulator + currentValue,
+                initialValue,
+            );
+            document.write(`
+            <p>La suma de los números del array es: ${sumWithInitial}</p>
+            `)
+        </script>
+</body>
+
+</html>
