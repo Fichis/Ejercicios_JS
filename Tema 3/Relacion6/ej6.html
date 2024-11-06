@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <h2>Ejercicio 6</h2>
+    <p>
+        One classic method for composing secret messages is called a square code. The spaces are
+        removed from the english text and the characters are written into a square (or rectangle). For
+        example, the sentence “If man was meant to stay on the ground god would have given us roots”
+        is 54 characters long, so it is written into a rectangle with 7 rows and 8 columns.
+    </p>
+    <script>
+        function squareCode(message) {
+            const cleanedMessage = message.replace(/\s+/g, '');
+            const rows = Math.floor(Math.sqrt(cleanedMessage.length));
+            const cols = Math.ceil(cleanedMessage.length / rows);
+
+            const grid = [];
+            let index = 0;
+
+            for (let row = 0; row < rows; row++) {
+                grid[row] = [];
+                for (let col = 0; col < cols; col++) {
+                    if (index < cleanedMessage.length) {
+                        grid[row][col] = cleanedMessage[index++];
+                    } else {
+                        grid[row][col] = '';
+                    }
+                }
+            }
+
+            let encodedMessage = '';
+            for (let col = 0; col < cols; col++) {
+                for (let row = 0; row < rows; row++) {
+                    if (grid[row][col]) {
+                        encodedMessage += grid[row][col];
+                    }
+                }
+                encodedMessage += ' ';
+            }
+
+            return encodedMessage.trim();
+        }
+
+
+        const message = "If man was meant to stay on the ground god would have given us roots";
+        const encodedMessage = squareCode(message);
+        document.write("Encoded Message: ", encodedMessage);
+
+    </script>
+</body>
+
+</html>

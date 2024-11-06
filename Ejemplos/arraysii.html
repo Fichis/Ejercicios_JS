@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de splice</title>
+</head>
+<body>
+    <script>
+        /* let MuestraArray = arr => document.write(`<p>${arr}</p>`);
+        let frutas = ["peras", "manzanas", "kiwis", "plátanos", "mandarinas"];
+        let eliminaManzanas = frutas.splice(1, 1)
+        MuestraArray(frutas);
+        frutas = ["peras", "manzanas", "kiwis", "plátanos", "mandarinas"];
+        let aniadeNaranjaSandia = frutas.splice(4, 0, "naranjas", "sandía")
+        MuestraArray(frutas);
+        frutas = ["peras", "manzanas", "kiwis", "plátanos", "mandarinas"];
+        let quitayAniade = frutas.splice(2, 1, "cerezas", "nísperos")
+        MuestraArray(frutas); */
+
+        /* ALUMNO */
+
+        /* const alumno = {
+            nombre: "Juan",
+            grupo: "1SMR",
+            notas: [4,6],
+            showNotas: function () {
+                this.notas.forEach(element => {
+                    console.log(element);
+                });
+            },
+            addNota: function(nota) {
+                this.notas.push(nota);
+            },
+            addNotas: function(arrNotas) {
+                this.notas = this.notas.concat(arrNotas);
+            }
+        }
+        alumno.addNota(8);
+        alumno.addNotas([7, 4, 6])
+        alumno.showNotas(); */
+
+
+        const arrAlumnos = [
+            {
+                nombre: "Juan",
+                grupo: "1SMR",
+                edad: 15,
+                notas: [4, 6],
+                mediaNotas: function () {
+                    let result = 0;
+                    for (let i = 0; i < this.notas.length; i++) {
+                        result += this.notas[i];
+                    }
+                    return result / this.notas.length;
+                },
+                filtraNotas: function(filtro){
+                    const result = [];
+                    this.notas.forEach(element => {
+                        if(filtro(element)){
+                            result.push(element);
+                        }
+                    });
+                    return result;
+                }
+            },
+            {
+                nombre: "Antonio",
+                grupo: "1SMR",
+                edad: 14,
+                notas: [5, 8],
+                mediaNotas: function () {
+                    let result = 0;
+                    for(let i = 0; i < this.notas.length; i++){
+                        result += this.notas[i];
+                    }
+                    return result/this.notas.length;
+                },
+                filtraNotas: function (filtro) {
+                    const result = [];
+                    this.notas.forEach(element => {
+                        if (filtro(element)) {
+                            result.push(element);
+                        }
+                    });
+                    return result;
+                }
+            }
+        ]
+        
+        console.log(arrAlumnos.sort((alumno1, alumno2) => 
+            alumno1.nombre.localeCompare(alumno2.nombre)));
+        console.log(arrAlumnos.sort((alumno1, alumno2) => 
+            alumno2.edad - alumno1.edad));
+
+
+        console.log(arrAlumnos[1].mediaNotas());
+        console.log(arrAlumnos.sort((alumno1, alumno2) => 
+            alumno2.mediaNotas() - alumno1.mediaNotas()
+        ));
+
+        arrAlumnos.forEach(alumno => {
+            console.log(alumno.nombre);
+            console.log(alumno.filtraNotas(valor=>valor>5));
+        });
+    </script>
+</body>
+</html>

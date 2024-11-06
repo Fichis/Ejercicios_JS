@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Constructoras | Ejemplos</title>
+</head>
+<body>
+    <script>
+        function Usuario (dni, nombre, edad){
+            this.dni = dni;
+            this.nombre = nombre;
+            this.edad = edad;
+            this.showMe = function (){
+                console.log(`Dni: ${this.dni} -- Nombre: ${this.nombre}`);
+            }
+        }
+
+        /* let obUser1 = new Usuario ('77945209A', 'Adolfo', 22);
+        console.log(obUser1);
+        console.log(obUser1.id);
+        obUser1.showMe(); */
+
+        const arrUsuarios = []; 
+        arrUsuarios[0] = new Usuario('77945209A', 'Adolfo', 22);
+        arrUsuarios[1] = new Usuario('12345678B', 'Begoña', 36);        
+
+        arrUsuarios.forEach(element => {
+            element.showMe();
+        });
+
+        class Empleado {
+            constructor (cod, nombre, tlf) {
+                this.cod = cod
+                this.nombre = nombre
+                this.tlf = tlf
+            }
+            muestraEmpleado(){
+                console.log(`Empleado: ${this.cod} -- ${this.nombre}`);
+            }
+        }
+
+        const arrEmpleados = [
+            new Empleado (1, 'Adolfo', 958160674),
+            new Empleado (2, 'Begoña', 666666666)
+        ]
+
+        arrEmpleados.forEach(element => {
+            element.muestraEmpleado();
+        });
+    </script>
+</body>
+</html>

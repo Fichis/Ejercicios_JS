@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <h2>Ejercicio 5</h2>
+    <p>
+        Write a program to search for the “saddle points” in a 5 by 5 array of integers. A saddle point is
+        a cell whose value is greater than or equal to any in its row, and less than or equal to any in its
+        column. There may be more than one saddle point in the array. Print out the coordinates of any
+        saddle points your program finds. Print out “No saddle points” if there are none.
+    </p>
+    <script>
+        function findSaddlePoints(matrix) {
+            const rowLength = matrix.length;
+            const colLength = matrix[0].length;
+
+            let saddlePointsFound = false;
+
+            for (let rowIndex = 0; rowIndex < rowLength; rowIndex++) {
+                for (let colIndex = 0; colIndex < colLength; colIndex++) {
+
+                    const currentValue = matrix[rowIndex][colIndex];
+
+                    let isMaxInRow = true;
+                    let isMinInCol = true;
+
+                    for (let k = 0; k < colLength; k++) {
+                        if (matrix[rowIndex][k] > currentValue) {
+                            isMaxInRow = false;
+                            break;
+                        }
+                    }
+
+                    for (let k = 0; k < rowLength; k++) {
+                        if (matrix[k][colIndex] < currentValue) {
+                            isMinInCol = false;
+                            break;
+                        }
+                    }
+
+                    if (isMaxInRow && isMinInCol) {
+                        console.log(`Saddle point found at (${rowIndex}, ${colIndex}) with value ${currentValue}`);
+                        saddlePointsFound = true;
+                    }
+                }
+            }
+
+            if (!saddlePointsFound) {
+                console.log("No saddle points");
+            }
+        }
+
+        /* const matrix = [
+          [5, 5, 5, 5, 5],
+          [1, 2, 3, 4, 5],
+          [2, 4, 6, 8, 10],
+          [3, 6, 9, 12, 15],
+          [1, 1, 1, 1, 1]
+        ]; */
+
+        const matrix = [
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 6],
+            [10, 11, 12, 13, 14],
+            [15, 16, 17, 18, 19],
+            [20, 21, 22, 23, 24]
+        ];
+
+
+        findSaddlePoints(matrix);
+    </script>
+</body>
+
+</html>

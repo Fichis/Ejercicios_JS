@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <h2>Ejercicio 3</h2>
+    <p>
+        Do you like treasure hunts? In this problem you are to write a program to explore the above
+        array for a treasure. The values in the array are clues. Each cell contains an integer between 11
+        and 55; for each value the ten’s digit represents the row number and the unit’s digit represents
+        the column number of the cell containing the next clue. Starting in the upper left corner (at
+        1,1), use the clues to guide your search of the array. (The first three clues are 11, 34, 42). The
+        treasure is a cell whose value is the same as its coordinates. Your program must first read in the
+        treasure map data into a 5 by 5 array. Your program should output the cells it visits during its
+        search, and a message indicating where you found the treasure.
+    </p>
+    <script>
+        let array = [
+            [34, 21, 32, 41, 25],
+            [14, 42, 43, 14, 31],
+            [54, 45, 52, 42, 23],
+            [33, 15, 51, 31, 35],
+            [21, 52, 33, 13, 23]
+        ];
+
+        function buscarTesoro(mapa) {
+            let fila = 0;
+            let columna = 0;
+            let camino = []; // array to store the path
+
+            while (true) {
+                camino.push(`Fila ${fila + 1} Columna ${columna + 1}`); // add current position to path
+
+                let valor = mapa[fila][columna];
+                let nuevaFila = Math.floor(valor / 10) - 1;
+                let nuevaColumna = valor % 10 - 1;
+
+                if (nuevaFila < 0 || nuevaFila >= mapa.length || nuevaColumna < 0 || nuevaColumna >= mapa[0].length) {
+                    console.log("No se encontró el tesoro");
+                    break;
+                }
+
+                if (nuevaFila === fila && nuevaColumna === columna) {
+                    document.write(`Encontrado en la fila ${fila + 1} columna ${columna + 1} <br>`);
+                    document.write(`Camino recorrido: <br> ${camino.join(' <br> ')}`);
+                    break;
+                }
+
+                fila = nuevaFila;
+                columna = nuevaColumna;
+            }
+        }
+
+        if (array.length === 5 && array[0].length === 5) {
+            let mapaValido = true;
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array[i].length; j++) {
+                    if (array[i][j] < 11 || array[i][j] > 55) {
+                        console.log("El mapa no es válido");
+                        mapaValido = false;
+                        break;
+                    }
+                }
+                if (!mapaValido) break;
+            }
+            if (mapaValido) {
+                buscarTesoro(array);
+            }
+        } else {
+            console.log("El mapa no es válido");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo duplica array</title>
+</head>
+
+<body>
+    <script>
+        const arrNumeros = [1, 5, 3, 7];
+        /* const doble = (arr) => {
+            const result = [];
+            for(let i = 0; i < arr.length; i++){
+                result.push(arr[i] * 2);
+            }
+            return result;
+        }
+
+        const incrementa = (arr) => {
+            const result = [];
+            for(let i = 0; i < arr.length; i++){
+                result.push(arr[i]+1);
+            }
+            return result;
+        } */
+
+        const modifica = (arr, fEjecuta) => {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                result.push(fEjecuta(arr[i]));
+            }
+            return result;
+        }
+        //console.log(modifica(arrNumeros, valor => valor - 1));
+
+
+        const filtraArray = (arr, fVerifica) => {
+            const result = [];
+            arr.forEach(element => {
+                if(fVerifica(element)){
+                    result.push(element);
+                }
+            });
+            return result;
+        }
+        console.log(filtraArray(arrNumeros, valor => valor<=5));
+    </script>
+</body>
+
+</html>

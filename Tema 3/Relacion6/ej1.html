@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h2>Ejercicio 1</h2>
+    <p>Write examples with Arrays to solve the next problems using only Array methods (like iterators, etc...):</p>
+    <ul>
+        <li>find largest number</li>
+        <li>find longest string</li>
+        <li>find even numbers</li>
+        <li>find odd numbers</li>
+        <li>find words that contain 'is'</li>
+        <li>assert all numbers are divisible by three</li>
+        <li>zip two arrays together</li>
+        <li>sort joined array from smallest to largest</li>
+        <li>remove the first word in the array</li>
+        <li>place a new word at the start of the array</li>
+        <li>replace some elements</li>
+    </ul>
+    <script>
+        let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let largest = Math.max(...numeros);
+        console.log(`The largest number is ${largest}`);
+
+        let strings = ["hello", "world", "javascript"];
+        let longest = Math.max(...strings);
+        console.log(`The longest string is ${longest}`);
+
+        let evenNumbers = numeros.filter(number => number % 2 === 0);
+        console.log(`The even numbers are ${evenNumbers}`);
+
+        let oddNumbers = numeros.filter(number => number % 2 !== 0);
+        console.log(`The odd numbers are ${oddNumbers}`);
+
+        let words = ["hello", "world", "is", "great", "beautis"];
+        let wordsContainingIs = words.filter(word => word.includes("is"));
+        console.log(`The words that contain 'is' are ${wordsContainingIs}`);
+
+        let divisibleByThree = numeros.every(number => number % 3 === 0);
+        console.log(`All numbers are divisible by three: ${divisibleByThree}`);
+
+        let array1 = [1, 2, 3];
+        let array2 = [4, 5, 6];
+        let zippedArray = array1.map((value, index) => [value, array2[index]]);
+        console.log(`Zipped array: ${zippedArray}`);
+
+        let joinedArray = array1.concat(array2);
+        let sortedArray = joinedArray.sort((a, b) => a - b);
+        console.log(`Sorted array: ${sortedArray}`);
+
+        let firstWord = words.shift();
+        console.log(`First word removed: ${firstWord}`);
+
+        words.unshift("new");
+        console.log(`New word added: ${words}`);
+
+        words.splice(2, 1, "replaced");
+        console.log(`Elements replaced: ${words}`);
+    </script>
+</body>
+</html>
