@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Ejemplo</title>
+</head>
+<body>
+    <p>
+        <a href="#">Enlace</a>
+        <a href="https://www.google.es">Enlace</a>
+        <a href="#">Enlace</a>
+        <a href="#">Enlace</a>
+        <a href="https://www.google.es">Enlace</a>
+    </p>
+    <p>
+        <a href="#">Enlace</a>
+        <a href="#">Enlace</a>
+        <a href="https://www.google.es">Enlace</a>
+        <a href="https://www.google.es">Enlace</a>
+        <a href="#">Enlace</a>
+    </p>
+    <p>
+        <a href="https://www.google.es">Enlace</a>
+        <a href="#">Enlace</a>
+        <a href="#">Enlace</a>
+        <a href="https://www.google.es">Enlace</a>
+        <a href="#">Enlace</a>
+    </p>
+
+    <script>
+        const nEnlances = document.getElementsByTagName("a");
+        console.log("" + nEnlances.length);
+        let penult = nEnlances[nEnlances.length-2];
+        console.log(penult.href);
+
+        let enlGoogle = 0;
+        for (const enlace of nEnlances) {
+            if(enlace.href == "www.google.es/"){
+                enlGoogle+=1;
+            }
+        }
+        console.log(enlGoogle);
+
+
+        
+        const parrafos = document.getElementsByTagName("p");
+        const ultimoP = parrafos[parrafos.length-1];
+        let enlaces = ultimoP.getElementsByTagName("a");
+        console.log("Numero de enlaces del tercer párrafo: " + enlaces.length);
+        
+        
+    </script>
+</body>
+</html>

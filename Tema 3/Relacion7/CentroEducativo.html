@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Centro Educativo</title>
+</head>
+
+<body>
+    <script>
+        class Alumno {
+            constructor(numero, nombre, media) {
+                this.id = numero;
+                this.nombre = nombre;
+                this.media = media;
+            }
+        }
+
+        class Colegio {
+            constructor(nombre, numAulas, numAlumnos, arrAlumnos) {
+                this.nombre = nombre;
+                this.numAulas = numAulas;
+                this.numAlumnos = numAlumnos;
+                this.arrAlumnos = arrAlumnos;
+            }
+            consultarNotaMedia(id){
+                const alumno = this.arrAlumnos.find(alumno => alumno.id === id);
+                if(alumno){
+                    return alumno.media;
+                }else {
+                    return false;
+                }
+            }
+            modificarNotaMedia(id, nota){
+                const alumno = this.arrAlumnos.find(alumno => alumno.id === id);
+                if(alumno){
+                    alumno.media = nota;
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+        }
+
+        let alum1 = new Alumno(1, "Luis", 5);
+        let alum2 = new Alumno(2, "Pepe", 8);
+        let alum3 = new Alumno(3, "Juan", 3);
+        let arrAlumnos = [alum1, alum2, alum3];
+        let colegio = new Colegio("Ilíberis", 2, arrAlumnos.length, arrAlumnos);
+        document.write(colegio.consultarNotaMedia(3) + "<br>");
+        document.write(colegio.modificarNotaMedia(3, 4) + "<br>");
+        document.write(colegio.consultarNotaMedia(3))
+
+    </script>
+</body>
+
+</html>

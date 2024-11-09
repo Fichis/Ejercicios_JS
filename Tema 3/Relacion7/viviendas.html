@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Viviendas</title>
+</head>
+
+<body>
+    <script>
+        class Vivienda {
+
+            constructor(calle, numero = "s/n", codPostal) {
+                this.calle = calle;
+                this.numero = numero;
+                this.codPostal = codPostal;
+            }
+
+            setNumero(numero){
+                this.numero = numero;
+            }
+
+            setCalle(calle){
+                this.calle = calle;
+            }
+
+            setCodigoPostal(codigo){
+                this.codPostal = codigo;
+            }
+
+            imprimeCalle(){
+                return this.calle;
+            }
+
+            imprimeNumero() {
+                return this.numero;
+            }
+
+            imprimeCodigoPostal() {
+                return this.codPostal;
+            }
+
+            toString(){
+                return `Nueva casa en calle: ${this.calle}, nº: ${this.numero}, CP: ${this.codPostal}.`
+            }
+        }
+
+        let casaA = new Vivienda("García Prieto", 58, 15706);
+        let casaB = new Vivienda("Camino Caneiro", 29, 32004);
+        let casaC = new Vivienda("San Clemente", undefined, 15705);
+        document.write(casaA + "<br>");
+        document.write(casaB + "<br>");
+        document.write(casaC + "<br>");
+        document.write(`El código postal de la casaA es: ${casaA.imprimeCodigoPostal()}. <br>`);
+        document.write(`La calle de la casaC es: ${casaC.imprimeCalle()}. <br>`);
+        
+        
+        
+        
+    </script>
+</body>
+
+</html>

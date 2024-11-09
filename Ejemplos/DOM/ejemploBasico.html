@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo básico de DOM</title>
+</head>
+<body>
+    <main>
+        <ul id="hobby-list">
+            <li class="hobby">Playing the banjo</li>
+            <li class="hobby">Paddleboarding</li>
+        </ul>
+
+        <div>
+            <p>
+                Contenido del p
+            </p>
+        </div>
+
+        <div class="parentDiv">
+
+        </div>
+
+    </main>
+
+    <script>
+        /* // ? By ID
+        let hobbiesList = document.getElementById("hobby-list");
+        console.log('hobbiesList', hobbiesList);
+        
+        // ? By Tag Name
+        let hobbies = document.getElementsByTagName("li");
+        // ? By Class
+        let hobbiesByClass = document.getElementsByClassName("hobby");
+        // ? By CSS Query
+        let firstHobby = document.querySelector("ul li.hobby");
+        let againAlsoHobbies = document.querySelectorAll("ul li.hobby");
+
+        // ? Creación de un texto
+        let divNodo = document.getElementsByTagName("div")[0];
+        console.log(divNodo); */
+        
+        /* let parrafo = document.createElement("p");
+        let textoNuevo = document.createTextNode("Nuevo contenido");
+        parrafo.appendChild(textoNuevo);
+        divNodo.appendChild(parrafo); */
+
+
+        let divNodo = document.querySelector(".parentDiv");
+        console.log(divNodo);
+
+        for (let i = 0; i < 5; i++) {
+            let parrafos = divNodo.appendChild(document.createElement("p"));
+            parrafos.appendChild(document.createTextNode("Txt"));
+        }
+
+        
+    </script>
+</body>
+</html>

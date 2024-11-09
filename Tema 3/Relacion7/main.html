@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <script src="./personas.js"></script>
+    <script src="./telefono.js"></script>
+    <script src="./point&line.js"></script>
+    <script>
+        //Ejercicio personas
+        console.log(edadPromedio(arrPersonas));
+
+        //Ejercicio Telefono
+        let tlfn1 = new Telefono(629039683);
+        console.log(`El número de telefono es: ${tlfn1.num}`);
+        console.log(`El número de llamadas es: ${tlfn1.numLlamadas}`);
+        
+        tlfn1.llamar();
+        tlfn1.llamar();
+        console.log(`Despues de llamar 2 veces, son: ${tlfn1.numLlamadas}`);
+
+        //Ejercicio punto y recta
+        let punto1 = new Punto(2,4);
+        let punto2 = new Punto(3,6);
+        let recta1 = new Recta(punto1, punto2);
+        console.log(`(${recta1.posInicial}) - (${recta1.posFinal})`);
+        
+    </script>
+</body>
+</html>
