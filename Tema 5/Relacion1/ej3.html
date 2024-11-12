@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    <main>
+        <section id="container">
+            
+        </section>
+    </main>
+    <script type="module">
+        import { arrArticulos } from "./modulos/articulos.mjs";
+
+        let contenedor = document.getElementById("container");
+
+
+        arrArticulos.forEach(articulo => {
+            let article = document.createElement("article");
+            contenedor.appendChild(article);
+
+            let codigo = document.createElement("p");
+            let textoCodigo = document.createTextNode(`${articulo.id}`);
+            codigo.appendChild(textoCodigo)
+
+            let titulo = document.createElement("p");
+            let textoTitulo = document.createTextNode(`${articulo.title}`);
+            titulo.appendChild(textoTitulo)
+
+            let precio = document.createElement("p");
+            precio.classList.add("precio");
+            let textoPrecio = document.createTextNode(`${articulo.price}`);
+            precio.appendChild(textoPrecio);
+
+            let description = document.createElement("p");
+            let textoDescrip = document.createTextNode(`${articulo.description}`);
+            description.appendChild(textoDescrip);
+
+            let categoria = document.createElement("p");
+            let textoCategoria = document.createTextNode(`Category: ${articulo.category}`);
+            categoria.appendChild(textoCategoria);
+
+            let imagen = document.createElement("img");
+            imagen.src = articulo.image;
+
+            let rating = document.createElement("p");
+            let textoRating = document.createTextNode(`Rating: ${articulo.rating.rate}, Votos: ${articulo.rating.count}`);
+            rating.appendChild(textoRating);
+
+            article.appendChild(codigo)
+            article.appendChild(titulo)
+            article.appendChild(precio)
+            article.appendChild(description)
+            article.appendChild(categoria)
+            article.appendChild(imagen)
+            article.appendChild(rating)
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <main id="contenedor"></main>
+    <script>
+        const arrPersonas = [
+            { codigo: 1, dni: "4455544X", Nombre: "Juan López López", edad: 18 },
+            { codigo: 2, dni: "7778888X", Nombre: "Luis Mateo López", edad: 25 },
+            { codigo: 3, dni: "6654545M", Nombre: "Pedro Guitierrez López", edad: 41 },
+            { codigo: 4, dni: "9998897X", Nombre: "María Guitierrez López", edad: 32 },
+        ];
+
+        let main = document.getElementById("contenedor");
+        let contPersona = document.createElement("div");
+        contPersona.classList.add("persona");
+
+        main.appendChild(contPersona);
+
+        arrPersonas.forEach(persona => {
+            let codigo = document.createElement("p");
+            let textoCodigo = document.createTextNode(`Código: ${persona.codigo}`);
+            let dni = document.createElement("p");
+            let textoDni = document.createTextNode(`DNI: ${persona.dni}`);
+            let nombre = document.createElement("p");
+            let textoNombre = document.createTextNode(`Nombre: ${persona.Nombre}`);
+            let edad = document.createElement("p");
+            let textoEdad = document.createTextNode(`Edad: ${persona.edad}`);
+            let separacion = document.createElement("p");
+            let textoSepara = document.createTextNode(`-----------------------------------`);
+            codigo.appendChild(textoCodigo);
+            dni.appendChild(textoDni);
+            nombre.appendChild(textoNombre);
+            edad.appendChild(textoEdad);
+            separacion.appendChild(textoSepara);
+            contPersona.appendChild(codigo);
+            contPersona.appendChild(dni);
+            contPersona.appendChild(nombre);
+            contPersona.appendChild(edad);
+            contPersona.appendChild(separacion);
+        });
+    </script>
+</body>
+
+</html>
