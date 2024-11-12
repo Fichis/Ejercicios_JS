@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    <main>
+        <section class="galeria">
+            <button onclick="anterior()">Anterior</button>
+            <img src="./img/1.jpg" alt="ImagenMuestra">
+            <button onclick="siguiente()">Siguiente</button>
+        </section>
+    </main>
+
+    <script>
+        const anterior = () => {
+            let imagen = document.querySelector("img");
+            let noExtension = imagen.src.slice(0,imagen.src.length-4);
+            let numero = parseInt(noExtension.charAt(noExtension.length-1));
+            /* console.log(numero);            
+            console.log(imagen.src); */
+            if(numero != 1) {
+                numero--;
+                imagen.src = `./img/${numero}.jpg`;
+            }else{
+                imagen.src = `./img/8.jpg`;
+            }
+        }
+
+        const siguiente = () => {
+                let imagen = document.querySelector("img");
+                let noExtension = imagen.src.slice(0, imagen.src.length - 4);
+                let numero = parseInt(noExtension.charAt(noExtension.length - 1));
+                /* console.log(numero);
+                console.log(imagen.src); */
+                if (numero != 8) {
+                    numero++;
+                    imagen.src = `./img/${numero++}.jpg`;
+                } else {
+                    imagen.src = `./img/1.jpg`;
+                }
+            }
+    </script>
+</body>
+</html>

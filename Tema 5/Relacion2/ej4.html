@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <ul>
+        <li>Elemento</li>
+        <li>Elemento</li>
+    </ul>
+    <button onclick="agregarElemento()">Agregar</button>
+
+    <script>
+        let lista = document.querySelector("ul")
+
+        const agregarElemento = () => {
+            let elemento = document.createElement("li");
+            let txtElemento = document.createTextNode("Elemento");
+            elemento.appendChild(txtElemento);
+
+            lista.appendChild(elemento);
+        }
+    </script>
+</body>
+</html>

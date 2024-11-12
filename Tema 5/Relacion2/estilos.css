@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    width: 50%;
+    padding: 2em;
+}
+
+button {
+    margin-left: 3.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.textoDesp::after {
+    content: " Leer más...";
+    color: red;
+    text-decoration: underline;
+}
+
+.textoAnte::after {
+    content: " Leer menos...";
+    color: red;
+    text-decoration: underline;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+main button {
+    margin: 0.2em;
+}
+
+img {
+    text-align: center;
+    width: 350px;
+    height: 300px;
+}

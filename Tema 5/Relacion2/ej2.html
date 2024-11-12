@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam animi est blanditiis aliquid. Consequuntur nemo
+        consectetur, eveniet, distinctio placeat laboriosam eaque maiores corporis non commodi, aliquid est?
+        Consequuntur, debitis rerum!
+        <span class="hidden">
+            Pariatur enim iste animi eum autem, eius nihil sapiente impedit consequatur saepe ea tenetur provident
+            quibusdam
+            voluptates incidunt sit dicta aliquam accusantium vero! Nesciunt voluptates labore asperiores ipsam, quas
+            blanditiis!
+            Ex eius sit adipisci ut repudiandae odit quisquam laboriosam maiores eum totam, dignissimos excepturi
+            consequatur nihil itaque iste necessitatibus ullam commodi minus, vitae magnam quos accusantium voluptas
+            minima?
+            Ratione, magnam.
+        </span>
+    </p>
+    <button onclick="fMuestra()">Ver Artículo Completo</button>
+
+    <script>
+        let texto = document.querySelector("span");
+        const fMuestra = () => texto.classList.remove("hidden");
+    </script>
+</body>
+
+</html>

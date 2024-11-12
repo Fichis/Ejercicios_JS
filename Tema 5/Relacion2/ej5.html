@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" id="name">
+        </p>
+        <p>
+            <label for="pass">Contraseña</label>
+            <input type="pass" id="pass">
+        </p>
+        <div class="adjuntos">
+            <p>
+                <input type="file">
+            </p>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+    <!-- ? Lo pongo fuera, porque si no, 
+    ? el formulario se recarga y vuelve a la posición original -->
+    <button onclick="agregaAdjunto()">Adjuntar otro fichero</button>
+
+    <script>
+        let contAdjuntos = document.querySelector(".adjuntos");
+
+        const agregaAdjunto = () => {
+            let parr = document.createElement("p");
+            let adjunto = document.createElement("input");
+            adjunto.type = "file";
+            parr.appendChild(adjunto);
+            contAdjuntos.appendChild(parr);
+        }
+    </script>
+</body>
+</html>
