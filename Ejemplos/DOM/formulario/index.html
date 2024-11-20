@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accediendo a elementos del formulario</title>
+</head>
+
+<body>
+    <form name="login" onsubmit="return false">
+        <p>
+            <label for="name">Usuario</label>
+            <input type="text" name="name" id="name" />
+        </p>
+        <p>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass" />
+        </p>
+        <input onclick="valida()" type="submit" value="Enviar" />
+    </form>
+
+    <script>
+        const arrUsuarios = [
+            {
+                name: "pepe",
+                pass: "pepe"
+            },
+            {
+                name: "adolfo",
+                pass: "1234"
+            }
+        ];
+        let valida = () => {
+            let formulario = document.forms.login;
+            let correcto = "";
+            if (!formulario.pass.value == "" || !formulario.pass.name == "") {
+                arrUsuarios.forEach(usuario => {
+                    if (formulario.name.value == usuario.name && formulario.pass.value == usuario.pass) {
+                        correcto = usuario;
+                        console.log(correcto);
+                        return correcto;
+                    }
+                });
+                if (correcto != "") {
+                    alert("Usuario correcto");
+                } else {
+                    alert("Usuario incorrecto");
+                }
+            } else {
+                alert("La contraseña está vacía!");
+            }
+        }
+    </script>
+</body>
+
+</html>

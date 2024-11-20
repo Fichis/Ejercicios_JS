@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer JS</title>
+    <link rel="stylesheet" href="./estilos.css">
+  </head>
+  <body>
+    <main>
+      <section class="clock">
+        <h1>STOPWATCH</h1>
+        <h2>VANILLA JAVASCRIPT STOPWATCH</h2>
+        <div class="timer">
+          <div class="m">0</div>
+          :
+          <div class="s">0</div>
+        </div> <br>
+        <div>
+          <button onclick="inicia()">Start</button>
+          <button onclick="parar()">Stop</button>
+          <button onclick="reset()">Reset</button>
+        </div>
+      </section>
+
+      <section class="grocery">
+        <h2>Grocery Bud</h2>
+        <form action="#" onsubmit="return false">
+          <input type="text" name="item" id="item"><button onclick="agrega()">Submit</button>
+        </form>
+        <ul>
+
+        </ul>
+        <a href="">Clear Items</a>
+      </section>
+    </main>
+    <script>
+      /* ? Timer */
+      let intervalId;
+      let contador = 1;
+      let minuto = 0;
+      let isRunning = false;
+
+      function inicia() {
+        
+        if (!isRunning) {
+          isRunning = true;
+          
+          document.querySelector("button:nth-of-type(1)").disabled = true;
+
+          intervalId = setInterval(function () {
+            let secs = document.querySelector(".s");
+            let mins = document.querySelector(".m");
+
+            if (contador < 60) {
+              secs.textContent = contador;
+              contador++;
+            } else {
+              secs.textContent = 0;
+              contador = 1;
+              mins.textContent = parseInt(mins.textContent) + 1;
+            }
+          }, 1000);
+        }
+      }
+
+      function parar() {
+        clearInterval(intervalId);
+
+        isRunning = false;
+
+        document.querySelector("button:nth-of-type(1)").disabled = false;
+      }
+
+      function reset() {
+        clearInterval(intervalId);
+
+        document.querySelector(".m").textContent = "0";
+        document.querySelector(".s").textContent = "0";
+
+        contador = 1;
+        minuto = 0;
+
+        document.querySelector("button:nth-of-type(1)").disabled = false;
+
+        isRunning = false;
+      }
+
+      /* ? Grocery Bud */
+      let arrElementos = [];
+      function agrega() {
+        let elemento = document.querySelector(".grocery form").children[0].value;
+        arrElementos.push(elemento);
+        muestra(arrElementos);
+      }
+
+      function muestra(arr) {
+        borra();
+        let lista = document.querySelector(".grocery ul");
+        arr.forEach(element => {
+          let li = document.createElement("li");
+          let liText = document.createTextNode(element);
+          li.appendChild(liText);
+          lista.appendChild(li);
+        });
+      }
+
+      function borra(){
+        arrElementos = [];
+      }
+    </script>
+  </body>
+</html>

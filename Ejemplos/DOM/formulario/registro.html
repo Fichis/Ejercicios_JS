@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de empleados</title>
+</head>
+
+<body>
+    <form name="registro" onsubmit="return false">
+        <p>
+            <label for="cod">Código</label>
+            <input type="text" name="cod" id="cod" />
+        </p>
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" />
+        </p>
+        <p>
+            <label for="tlfn">Teléfono</label>
+            <input type="text" name="tlfn" id="tlfn" />
+        </p>
+        <input type="submit" onclick="creaEmpleado()" value="Add" />
+    </form>
+    <script>
+        class Empleado {
+            constructor(cod, nombre, tlf) {
+                this.cod = cod;
+                this.nombre = nombre;
+                this.tlf = tlf;
+            }
+            muestraEmpleado() {
+                console.log(`Empleado: ${this.cod} -- ${this.nombre}`);
+            }
+        }
+
+        let arrEmpleados = [];
+
+        let creaEmpleado = () => {
+            let formulario = document.forms.registro;
+            let codigo = formulario.cod;
+            let nombre = formulario.name;
+            let tlfn = formulario.tlfn;
+            let emp = new Empleado(codigo, nombre, tlfn);
+            arrEmpleados.push(emp);
+        };
+
+        arrEmpleados.forEach((emple) => {
+            let parrafo = document.createElement("p");
+            let parrafoText = document.createTextNode(emple.muestraEmpleado());
+            parrafo.appendChild(parrafoText);
+            document.body.appendChild(parrafo);
+        });
+    </script>
+</body>
+
+</html>

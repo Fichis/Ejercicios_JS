@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <div>1</div>
+    <button onclick="decrementa()">Decrementa</button>
+    <button onclick="incrementa()">Incrementa</button>
+
+    <script>
+        let contador = document.querySelector("div");
+        const incrementa = () => contador.textContent = parseInt(contador.textContent)+1;
+        const decrementa = () => contador.textContent = parseInt(contador.textContent)-1;
+    </script>
+</body>
+</html>
