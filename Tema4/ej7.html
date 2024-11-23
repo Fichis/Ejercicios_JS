@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 7</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Introduce tu nombre"
+        />
+      </p>
+      <p>
+        <input
+          type="email"
+          name="mail"
+          id="mail"
+          placeholder="Introduce tu email"
+        />
+      </p>
+      <p>
+        <textarea name="msj" id="msj"></textarea>
+      </p>
+      <span>
+        <input type="submit" value="Enviar ahora" />
+      </span>
+      <span>
+        <input type="reset" value="Limpiar campos" />
+      </span>
+    </form>
+    <script>
+      let formulario = document.querySelector("form");
+
+      function agregarTextoDescriptivo() {
+        const inputsText = document.querySelectorAll(
+          'input[type="text"], input[type="email"], textarea'
+        );
+
+        inputsText.forEach((input) => {
+          let descripcion = "";
+          if (input.id === "name") {
+            descripcion = " (Por favor, ingresa tu nombre completo)";
+          } else if (input.id === "mail") {
+            descripcion = " (Ingresa un correo electrónico válido)";
+          } else if (input.id === "msj") {
+            descripcion = " (Escribe tu mensaje aquí)";
+          }
+
+          const spanDescripcion = document.createElement("div");
+          spanDescripcion.classList.add("descripcion");
+          spanDescripcion.textContent = descripcion;
+
+          // Insertar el nuevo elemento después del input o textarea
+          input.parentNode.appendChild(spanDescripcion);
+        });
+      }
+
+      function creaElemento(texto) {
+        const divDescripcion = document.createElement("div");
+        divDescripcion.textContent = texto;
+        event.target.parentElement.appendChild(divDescripcion);
+      }
+
+      function showNodes(padre) {
+        for (const element of padre.children) {
+          if (!element.hasChildNodes()) {
+            element.addEventListener("focus", () => {
+              if (event.target.type == "text") {
+                let descripcion = "Por favor, ingresa tu nombre completo.";
+                creaElemento(descripcion);
+              } else if (event.target.type == "email") {
+                let descripcion = "Por favor, ingresa un email válido";
+                creaElemento(descripcion);
+              } else if (event.target.id == "msj") {
+                let descripcion = "Por favor, ingresa tu mensaje";
+                creaElemento(descripcion);
+              } else if (event.target.type == "submit") {
+                let descripcion = "Botón para enviar el formulario";
+                creaElemento(descripcion);
+              } else if (event.target.type == "reset") {
+                let descripcion = "Botón para limpiar los campos del formulario";
+                creaElemento(descripcion);
+              }
+            });
+            element.addEventListener("blur", () => {
+              event.target.parentElement.removeChild(
+                document.querySelector("div")
+              );
+            });
+          } else {
+            showNodes(element);
+          }
+        }
+      }
+      showNodes(formulario);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <style>
+      div {
+        width: 50vw;
+        height: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <script>
+      let caja = document.querySelectorAll("div");
+      caja.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+          event.target.style.backgroundColor = "blue";
+          console.log(event.target);
+        });
+      });
+    </script>
+  </body>
+</html>

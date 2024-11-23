@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Introduce tu nombre"
+        />
+      </p>
+      <p>
+        <input
+          type="email"
+          name="mail"
+          id="mail"
+          placeholder="Introduce tu email"
+        />
+      </p>
+      <p>
+        <textarea name="msj" id="msj"></textarea>
+      </p>
+      <span>
+        <input type="submit" value="Enviar ahora" />
+      </span>
+      <span>
+        <input type="reset" value="Limpiar campos" />
+      </span>
+    </form>
+
+    <script>
+      function showNodes(padre) {
+        for (const element of padre.children) {
+          if (!element.hasChildNodes()) {
+            element.addEventListener("blur", () => {
+              let cadena = "";
+              if (event.target.value.includes("&")) {
+                for (let i = 0; i < event.target.value.length; i++) {
+                  if (event.target.value[i] == "&") {
+                    cadena += "and";
+                  } else {
+                    cadena += event.target.value[i];
+                  }
+                }
+                event.target.value = cadena;
+              }
+            });
+          } else {
+            showNodes(element);
+          }
+        }
+      }
+      showNodes(document.querySelector("form"));
+    </script>
+  </body>
+</html>

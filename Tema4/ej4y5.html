@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <link rel="stylesheet" href="./assets/estilos.css" />
+  </head>
+  <body>
+    <h1>Ctrl para pintar rojo, Shift para pintar azul, Alt para borrar pixel a pixel, "d" para borrar todo el canva.</h1>
+    <script>
+      function creaCanva(size) {
+        /* ? Creación de contenedor */
+        let container = document.createElement("main");
+        /* ? Creación de Fragmento */
+        let fragment = document.createDocumentFragment();
+        /* ? Creación de la clase contenedor */
+        container.classList.add("contenedor");
+        /* ? Añadido el contenedor al fragmento */
+        fragment.appendChild(container);
+        for (let i = 0; i < size * size; i++) {
+          let caja = document.createElement("div");
+          container.appendChild(caja);
+        }
+
+        document.body.appendChild(fragment);
+      }
+      window.addEventListener("load", (event) => {
+        creaCanva(210);
+        let caja = document.querySelectorAll("div");
+        caja.forEach((element) => {
+          element.addEventListener("mouseover", (hover) => {
+            
+            if (hover.ctrlKey == true) {
+              hover.target.style.backgroundColor = "red";
+            }else if(hover.shiftKey){
+                hover.target.style.backgroundColor = "blue";
+            }else if(hover.altKey == true) {
+              hover.target.style.backgroundColor = "white";
+            }
+          });
+        });
+      });
+
+      document.body.addEventListener("keydown", (pressed) => {
+        
+        if(pressed.key == "d"){
+          //cambiar todos los divs al bg white
+          let caja = document.querySelectorAll("div");
+          caja.forEach(element => {
+            element.style.backgroundColor = "white";
+          });
+        }
+      })
+    </script>
+  </body>
+</html>
